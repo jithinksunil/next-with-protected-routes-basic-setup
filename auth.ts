@@ -4,12 +4,12 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import {
   ACCESS_TOKEN_EXPIRATION_S,
   createJWTToken,
-  prisma,
-  refresh,
   REFRESH_TOKEN_EXPIRATION_S,
 } from './lib';
 import { JWT } from 'next-auth/jwt';
 import { ROLES } from './app/generated/prisma/enums';
+import prisma from './prisma';
+import { refresh } from './lib/server';
 export const { auth, signIn, signOut, handlers } = NextAuth({
   session: { strategy: 'jwt' },
   providers: [

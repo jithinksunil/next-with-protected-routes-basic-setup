@@ -8,7 +8,7 @@ import {
 import { auth } from '@/auth';
 import { Session } from 'next-auth';
 import { createJWTToken, verifyJWTToken } from '../helper';
-import { prisma } from '../prisma';
+import prisma from '@/prisma';
 
 export async function getSession(): Promise<SessionPayload | null> {
   const session = (await auth()) as unknown as

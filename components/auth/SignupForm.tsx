@@ -8,7 +8,7 @@ import { SignupFormInterface } from '@/interfaces';
 import { toastMessage } from '@/lib/toast';
 import { CheckBoxInput, TextInput } from '../form';
 import { PrimaryButton } from '../common';
-import { useAuth } from '@/context/AuthContext';
+// import { useAuth } from '@/context/AuthContext';
 import { signIn } from 'next-auth/react';
 
 const schema = yup.object().shape({

@@ -1,12 +1,11 @@
 'use server';
-import prisma from '@/lib/prisma';
+import prisma from '@/prisma';
 import { ServerActionResult } from '@/interfaces';
 import {
   ACCESS_TOKEN_EXPIRATION_S,
   convertToErrorInstance,
   createJWTToken,
   forbiddenMessage,
-  getSession,
   REFRESH_TOKEN_EXPIRATION_S,
   unauthorizedMessage,
 } from '@/lib';
