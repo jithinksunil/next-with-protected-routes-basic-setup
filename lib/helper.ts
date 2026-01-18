@@ -1,6 +1,8 @@
 import { ROLES } from '@/app/generated/prisma/enums';
 import { SessionPayload } from '@/interfaces';
 import { jwtVerify, SignJWT } from 'jose';
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function convertToErrorInstance(
   unknownError: unknown,
@@ -50,4 +52,8 @@ export async function verifyJWTToken(
     userId: payload.userId as string,
     role: payload.role as ROLES,
   };
+}
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
